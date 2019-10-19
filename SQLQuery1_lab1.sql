@@ -92,6 +92,19 @@
 --2. Wybierz informację o produktach (grupa, nazwa, cena), produkty
 --posortuj wg grup a w grupach malejąco wg ceny
 
+--Napisz polecenie, które oblicza wartość każdej pozycji zamówienia
+--o numerze 10250
+
+--select * from orders
+--where orderid = 10250
+
+--select *, UnitPrice*Quantity*(1-Discount) as suma from [Order Details]
+--where orderid = 10250
+
+--select companyname, concat(Phone,' , ' , Fax) as fasd from Suppliers
+use library
+select * from member
+
 
 
 
