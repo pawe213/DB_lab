@@ -15,3 +15,5 @@ Shift +F1 wyszukiwanie opisu funkcji
 zadanie domowe
 use library
 
+2019.11.17
+
