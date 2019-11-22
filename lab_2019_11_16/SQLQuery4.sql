@@ -10,7 +10,9 @@
 
 --SELECT buyer_name, s.buyer_id, qty
 --FROM buyers AS b, sales AS s
---WHERE b.buyer_id = s.buyer_id--SELECT buyer_name, sales.buyer_id, qty
+--WHERE b.buyer_id = s.buyer_id
+
+--SELECT buyer_name, sales.buyer_id, qty
 --FROM buyers INNER JOIN sales
 --ON buyers.buyer_id = sales.buyer_id
 
@@ -29,17 +31,20 @@
 --FROM orders
 --INNER JOIN customers
 --ON orders.customerid = customers.customerid
---WHERE orderdate > ‘3/1/98’--Use joindb--SELECT buyer_name, sales.buyer_id, qty
+--WHERE orderdate > ‘3/1/98’
+
+--Use joindb
+--SELECT buyer_name, sales.buyer_id, qty
 --FROM buyers LEFT OUTER JOIN sales
 --ON buyers.buyer_id = sales.buyer_id
 --Where qty is Null
 
 --USE northwind
---SELECT companyname, customers.customerid, orderdate
---FROM customers
---LEFT OUTER JOIN orders
---ON customers.customerid = orders.customerid
---WHERE OrderDate is Null
+-- SELECT companyname, customers.customerid, orderdate
+-- FROM customers
+-- LEFT OUTER JOIN orders
+-- ON customers.customerid = orders.customerid
+-- WHERE OrderDate is Null
 
 
 --Napisz polecenie, które wyświetla listę dzieci będących członkami
@@ -120,10 +125,35 @@
 --on Cheff.EmployeeID = Pracownik.ReportsTo
 
 --Napisz polecenie, które wyświetla pracowników, którzy nie mają
---podwładnych (baza northwind)--USE northwind
+--podwładnych (baza northwind)
+
+--USE northwind
 --SELECT boss.LastName, boss.FirstName, boss.EmployeeID 
 --from Employees as empl
 --right outer join Employees as boss
---on empl.ReportsTo = boss.EmployeeID--where empl.EmployeeID is Null--Podaj listę członków biblioteki mieszkających w Arizonie (AZ) mają
---więcej niż dwoje dzieci zapisanych do bibliotekiUSE librarySELECT m.firstname, m.lastnameFROM member minner join adult aon m.member_no = a.member_nojoin juvenile as jon a.member_no = j.adult_member_nowhere a.state = 'AZ'group by m.firstname--having count(*) >2 
+--on empl.ReportsTo = boss.EmployeeID
+--where empl.EmployeeID is Null
+
+--Podaj listę członków biblioteki mieszkających w Arizonie (AZ) mają
+--więcej niż dwoje dzieci zapisanych do biblioteki
+
+USE library
+SELECT m.firstname, m.lastname
+FROM member m
+inner join adult a
+on m.member_no = a.member_no
+join juvenile as j
+on a.member_no = j.adult_member_no
+where a.state = 'AZ'
+group by m.firstname
+having count(*) >2
+
+
+USE northwind
+SELECT *-- empl.LastName, boss.LastName, boss.FirstName, boss.EmployeeID
+from Employees as empl
+right outer join  Employees as boss
+on empl.ReportsTo = boss.EmployeeID
+
+
 

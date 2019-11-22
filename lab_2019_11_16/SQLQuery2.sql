@@ -28,13 +28,13 @@ GROUP BY OrderID
 
 ---Podaj liczbę zamówień dostarczanych przez poszczególnych
 ---spedytorów (przewoźników)
-SELECT ShipVia, count(orderid) from Orders
-Group by ShipVia
-
----Który z spedytorów był najaktywniejszy w 1997 roku
-SELECT ShipVia, count(orderid) from Orders
-WHERE YEAR(ShippedDate) = 1997
-Group by ShipVia
+-- SELECT ShipVia, count(orderid) from Orders
+-- Group by ShipVia
+--
+-- ---Który z spedytorów był najaktywniejszy w 1997 roku
+-- SELECT ShipVia, count(orderid) from Orders
+-- WHERE YEAR(ShippedDate) = 1997
+-- Group by ShipVia
 
 
 
