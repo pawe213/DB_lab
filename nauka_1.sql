@@ -1,7 +1,7 @@
 USE Northwind
--- SELECT Orderid, customerid
--- FROM Orders
--- Where OrderDate < '1996-08-01'
+SELECT Orderid, customerid
+FROM Orders
+Where OrderDate < '1996-08-01'
 
 -- 1. Wybierz nazwy i adresy wszystkich klientów mających siedziby w Londynie
 -- SELECT CompanyName, Address

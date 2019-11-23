@@ -147,13 +147,18 @@ on a.member_no = j.adult_member_no
 where a.state = 'AZ'
 group by m.firstname
 having count(*) >2
+UNION
+SELECT m.firstname, m.lastname
+FROM member m
+inner join adult a
+on m.member_no = a.member_no
+join juvenile as j
+on a.member_no = j.adult_member_no
+where a.state = 'CA'
+group by m.firstname
+having count(*) >2
 
 
-USE northwind
-SELECT *-- empl.LastName, boss.LastName, boss.FirstName, boss.EmployeeID
-from Employees as empl
-right outer join  Employees as boss
-on empl.ReportsTo = boss.EmployeeID
 
 
 
